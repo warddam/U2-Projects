@@ -1,6 +1,7 @@
 import javax.swing.*;
 
 
+
 public class WidgetFactory {
 
     /*
@@ -31,38 +32,38 @@ public class WidgetFactory {
      Profit: $760.00
 
      */
-   public static class widget = (JOptionPane.showInputDialog("How many widgets would you like to order?"));
 
+    private int widgetCount;
+    WidgetFactory(int number) {
+        this.widgetCount = number;
+
+    }
+    void calcWidget() {
+        int days;
+        double widgetPrice = 10.00 * widgetCount;
+        days = widgetCount/160;
+        double hourlyPay = (1320 * days);
+        double widgetProfit = widgetPrice - hourlyPay;
+
+
+
+
+        JOptionPane.showMessageDialog(null,  "Widgets: "+ widgetCount + "\n" + "Production Days: " + days + "\n" +"Widgets sold: " + widgetPrice + "\n"+ "Total Production cost: $"+ hourlyPay + "\n" + "Profit: $" + widgetProfit );
+    }
     public static void main(String[] args) {
 
-           widgetDay();
-           widgetCost();
-       }
+         int number = 0;
 
-    private static void widgetCost() {
-    }
 
-    private static void widgetDay() {
-    }
+        String input = JOptionPane.showInputDialog("Enter Quantity");
+        number = Integer.parseInt(input);
 
-    public static void widgetDay(double widget){
+         WidgetFactory wFactory = new WidgetFactory(number);
+         wFactory.calcWidget();
 
 
 
-        double widgetDay = Math.rint(widget/160);
-
-        JOptionPane.showMessageDialog(null,"Number of days to manufacture: " + widgetDay);
-    }
-
-    public void widgetCost(double widget){
-double hours = 16.50 * 16; 
-double dailyCost = 5 * hours;
-double widgetCost = widget * dailyCost; 
-
-
-        return widgetCost();
 
 
     }
 }
-
