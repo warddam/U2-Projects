@@ -10,27 +10,34 @@ public class RPGCharacterGUI {
 
     public static void main(String[] args) {
 
-            int strength;
+
             int energy;
             int dexterity;
             int spirit;
 
 
         JTextField input = new JTextField();
-        JPanel pane = new JPanel();
+
+        JPanel panel = new JPanel();
         JLabel label = new JLabel ("Enter Strength:");
 
         JTextField strengthText = new JTextField(5);
               strengthText.setBounds(200, 50, 125, 25);
+        strengthText.getText();
+
 
         JTextField energyText = new JTextField(5);
         energyText.setBounds(200, 75, 125, 25);
+        energyText.getText();
 
         JTextField dexterityText = new JTextField(5);
         dexterityText.setBounds(200, 100, 125, 25);
+        dexterityText.getText();
 
         JTextField spiritText = new JTextField(5);
          spiritText.setBounds(200, 125, 125, 25);
+        spiritText.getText();
+
 
         JFrame frame = new JFrame("RPG Character");
 
@@ -50,13 +57,16 @@ public class RPGCharacterGUI {
         label4.setBounds(50,125,250,35);
 
 
-
-
-        JButton button4 = new
+        JButton button1 = new
                 JButton("Ignite Calculate");
-        button4.setBounds(200, 200, 125, 25);
-        frame.add(button4);
+        button1.setBounds(200, 200, 125, 25);
+        frame.add(button1);
+
+
+
     //add elements
+
+
 
 
 
@@ -68,13 +78,27 @@ public class RPGCharacterGUI {
         frame.add(label2);
         frame.add(label3);
         frame.add(label4);
-        frame.add(pane);
+        frame.add(panel);
 
         frame.setVisible(true);
 
 
-    }}
+            }
 
 
 
+private class b1 implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
+        JButton button1 = new
+                JButton("Ignite Calculate");
+        button1.setBounds(200, 200, 125, 25);
+
+
+
+        button1.addActionListener(new b1());
+
+
+    }
+}}
